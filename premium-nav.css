@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(pexels-scottwebb-1048033.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 20px;
+
+    
+}
+
+nav{
+    background: hsla(137, 53%, 51%, 0.884);
+    padding: 18px 30px;
+    border-radius: 50px;
+    box-shadow: 0 15px 35px hsla(180, 90%, 8%, 0);
+    max-width: 95vw;
+    
+    /* Translucent background so the blurred image shows through */
+    background: rgba(255, 255, 255, 0.107);
+    
+    /* The core magic: blurs the background image behind the nav */
+    /* Safari support */
+     backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    /* Subtle light border to highlight the edges of the glass */
+    border: 1px solid rgba(255, 255, 255, 0.279);
+    
+    /* Soft elevation shadow */
+    box-shadow: 0 15px 35px 0 hsla(138, 78%, 55%, 0.559);
+    
+    padding: 1vw 2vw;
+    border-radius: 50px;
+    width: 90%;
+    max-width: 95vw;
+
+}
+
+nav ul{
+    display: flex;
+    gap: clamp(6px, 1.5vw, 18px);
+    list-style: none;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+nav a{
+    position: relative;
+    display: block;
+    padding: 0.5vw 1.2vw;
+    border-radius: 800px;
+    text-decoration: none;
+    
+    font-size: clamp(10px, 1.2vw, 16px);
+    font-weight: 400;
+    transition: .35s ease;
+    overflow: hidden;
+    color: #ffffff;
+    white-space: nowrap;
+
+}
+
+nav a:hover{
+    color: hsl(255, 85%, 26%);
+   
+    font-size: 21px;
+    transform: translateY(-3px) scale(1.05);
+}
+
+nav a:hover::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, hsla(240, 56%, 84%, 0.333), #5af4ea26);
+    opacity: 0;
+    z-index: -1;
+    transition: .35s;
+
+}
+
+
+
+
+nav a:hover::before{
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    nav {
+        border-radius: 20px;
+        padding: 10px;
+    }
+    
+    nav ul {
+        gap: 6px;
+    }
+
+    nav a {
+        padding: 6px 12px;
+    }
+}
+
+
